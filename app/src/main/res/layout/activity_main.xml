@@ -47,4 +47,10 @@
         android:text="樂透"
         android:textSize="30sp" />
 
+    <ImageView
+        android:id="@+id/img"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/memecat" />
+
 </LinearLayout>

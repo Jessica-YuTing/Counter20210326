@@ -25,6 +25,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, View.OnLongClick
             }
         })
         txv.setOnLongClickListener(this)//長按
+        img.setOnLongClickListener(this)//長按圖片，還未做圖片設定
 
     }
 
@@ -42,9 +43,15 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, View.OnLongClick
     }
 
     override fun onLongClick(v: View?): Boolean {
-        counter+=2
+        if(v==txv) {
+            counter += 2
+            return true
+        }
+        else{
+            counter += 3
+            return true
+        }
         txv.text = counter.toString()
-        return true
 
     }
 
