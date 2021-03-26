@@ -18,6 +18,14 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         btn1.setOnClickListener(this)
         btn2.setOnClickListener(this)
         btn3.setOnClickListener(this)//歸零
+
+        btnHappy.setOnClickListener(object : View.OnClickListener{
+            override fun onClick(p0: View?) {
+                counter= (1..100).random()
+                txv.text = counter.toString()
+            }
+        })
+
     }
 
     override fun onClick(v: View?) {
