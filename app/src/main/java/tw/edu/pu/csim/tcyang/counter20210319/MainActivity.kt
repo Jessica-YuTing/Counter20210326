@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.view.View
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     var counter:Int = 0
 
@@ -13,6 +13,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         txv.text = counter.toString()
+
+        txv.setOnClickListener(this) //監控
     }
 
 
@@ -23,6 +25,11 @@ class MainActivity : AppCompatActivity() {
         else{
             counter += 2
         }
+        txv.text = counter.toString()
+    }
+
+    override fun onClick(v: View?) {
+        counter++
         txv.text = counter.toString()
     }
 
