@@ -15,23 +15,22 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         txv.text = counter.toString()
 
         txv.setOnClickListener(this) //監控
-    }
-
-
-    fun Add(v:View){
-        if (v == btn){
-            counter++
-        }
-        else{
-            counter += 2
-        }
-        txv.text = counter.toString()
+        btn1.setOnClickListener(this)
+        btn2.setOnClickListener(this)
+        btn3.setOnClickListener(this)//歸零
     }
 
     override fun onClick(v: View?) {
-        counter++
+        if(v==txv || v==btn1){
+            counter++
+        }
+        else if(v==btn2){
+            counter+=2
+        }
+        else{
+            counter=0
+        }
         txv.text = counter.toString()
     }
-
 
 }
